@@ -1,5 +1,6 @@
 import { Text, StyleSheet, View, TextInput } from "react-native"
 import React from 'react'
+import PropTypes from "prop-types"
 
 const FormInput = React.forwardRef((props, forwardedRef) => {
     const { label, error, ...textInputProps } = props
@@ -26,6 +27,18 @@ const FormInputBig = React.forwardRef((props, forwardedRef) => {
         </View>
     )
 })
+
+FormInput.displayName = 'FormInput'
+FormInput.propTypes = {
+  label: PropTypes.string,
+  error: PropTypes.string,
+}
+
+FormInputBig.displayName = 'FormInputBig'
+FormInputBig.propTypes = {
+  label: PropTypes.string,
+  error: PropTypes.string,
+}
 
 export {FormInput, FormInputBig}
 

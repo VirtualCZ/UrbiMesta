@@ -23,11 +23,11 @@ const AddEvent = (props) => {
   const [CityArr, setCityArr] = useState([])
 
   const onSubmit = (form) => {
-    console.log(form)
+    console.log("onSubmit", form)
   }
 
   const onErrors = (errors) => {
-    console.warn(errors)
+    console.warn("errors", errors)
   }
 
   useEffect(()=>{
@@ -97,7 +97,9 @@ const AddEvent = (props) => {
             <FormInputContext 
               name="town_id" 
               label="town_id" 
-              rules={{ required: 'Username is required!' }}  
+              rules={{ 
+                required: 'town_id is required!' 
+              }}  
               onSubmitEditing={focusPassword}
               returnKeyType='next'
             />
@@ -105,11 +107,7 @@ const AddEvent = (props) => {
               name="event_name" 
               label="Name" 
               rules={{
-                required: 'Password is required!',
-                minLength: {
-                  message: 'Use at least 10 characters.',
-                  value: 10,
-                },
+                required: 'Name is required!',
               }}
               ref={passwordRef}
             />
